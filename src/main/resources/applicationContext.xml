@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    Подключаем файл в котором описаны переменные и значения-->
+    <context:property-placeholder location="classpath:moviePlayer.properties"/>
+
+<!--    hellospring-->
+    <bean id = "testBean" class = "com.evgeniy.spring.test.hellospring.TestBean">
+<!--        Если используем конструктор-->
+<!--        <constructor-arg value="Evgeniy"/>-->
+        <property name = "name" value = "Evgeniy"/>
+    </bean>
+
+<!--    musicIoC-->
+    <bean id = "musicBean" class="com.evgeniy.spring.test.musicIoC.ClassicalMusic">
+    </bean>
+<!--    Внедрение зависимости с помощью Dependency Injection-->
+    <bean id="musicPlayer" class="com.evgeniy.spring.test.musicIoC.MusicPlayer">
+<!--        ref (reference - ссылка) передаёт в конструктор класса MusicPlayer бин musicBean-->
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
+<!--    Movie-->
+    <bean id="actionMovieBean" class="com.evgeniy.spring.test.movie.ActionMovie">
+    </bean>
+
+    <bean id="fantasticMovieBean" class="com.evgeniy.spring.test.movie.Fantastic">
+    </bean>
+
+    <bean id="moviePlayer" class="com.evgeniy.spring.test.movie.MoviePlayer">
+        <property name="movies">
+            <list>
+                <ref bean="fantasticMovieBean"/>
+                <ref bean="actionMovieBean"/>
+            </list>
+        </property>
+        <!--        Присвоение значений полям класса MoviePlayer через файл-->
+        <property name="name" value="${moviePlayer.name}"/>
+        <property name="volume" value="${moviePlayer.volume}"/>
+
+        <!--        Присвоение значений полям класса MoviePlayer-->
+<!--        <property name="name" value="Some name"/>-->
+<!--        <property name="volume" value="50"/>-->
+    </bean>
+</beans>
