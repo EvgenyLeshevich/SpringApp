@@ -1,4 +1,4 @@
-package com.evgeniy.spring.test.musicIoC;
+package com.evgeniy.spring.test.xml.musicIoC;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

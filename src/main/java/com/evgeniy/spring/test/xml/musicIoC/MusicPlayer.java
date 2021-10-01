@@ -1,4 +1,4 @@
-package com.evgeniy.spring.test.musicIoC;
+package com.evgeniy.spring.test.xml.musicIoC;
 
 public class MusicPlayer {
     private Music music;

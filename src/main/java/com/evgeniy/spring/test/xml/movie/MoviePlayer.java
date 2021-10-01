@@ -1,6 +1,4 @@
-package com.evgeniy.spring.test.movie;
-
-import com.evgeniy.spring.test.musicIoC.Music;
+package com.evgeniy.spring.test.xml.movie;
 
 import java.util.ArrayList;
 import java.util.List;

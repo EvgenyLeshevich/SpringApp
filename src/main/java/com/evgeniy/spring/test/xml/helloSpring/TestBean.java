@@ -1,4 +1,4 @@
-package com.evgeniy.spring.test.hellospring;
+package com.evgeniy.spring.test.xml.helloSpring;
 
 public class TestBean {
     private String name;

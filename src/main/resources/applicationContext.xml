@@ -11,29 +11,29 @@
     <context:property-placeholder location="classpath:moviePlayer.properties"/>
 
 <!--    hellospring-->
-    <bean id = "testBean" class = "com.evgeniy.spring.test.hellospring.TestBean">
+    <bean id = "testBean" class = "com.evgeniy.spring.test.xml.helloSpring.TestBean">
 <!--        Если используем конструктор-->
 <!--        <constructor-arg value="Evgeniy"/>-->
         <property name = "name" value = "Evgeniy"/>
     </bean>
 
 <!--    musicIoC-->
-    <bean id = "musicBean" class="com.evgeniy.spring.test.musicIoC.ClassicalMusic">
+    <bean id = "musicBean" class="com.evgeniy.spring.test.xml.musicIoC.ClassicalMusic">
     </bean>
 <!--    Внедрение зависимости с помощью Dependency Injection-->
-    <bean id="musicPlayer" class="com.evgeniy.spring.test.musicIoC.MusicPlayer">
+    <bean id="musicPlayer" class="com.evgeniy.spring.test.xml.musicIoC.MusicPlayer">
 <!--        ref (reference - ссылка) передаёт в конструктор класса MusicPlayer бин musicBean-->
         <constructor-arg ref="musicBean"/>
     </bean>
 
 <!--    Movie-->
-    <bean id="actionMovieBean" class="com.evgeniy.spring.test.movie.ActionMovie">
+    <bean id="actionMovieBean" class="com.evgeniy.spring.test.xml.movie.ActionMovie">
     </bean>
 
-    <bean id="fantasticMovieBean" class="com.evgeniy.spring.test.movie.Fantastic">
+    <bean id="fantasticMovieBean" class="com.evgeniy.spring.test.xml.movie.Fantastic">
     </bean>
 
-    <bean id="moviePlayer" class="com.evgeniy.spring.test.movie.MoviePlayer">
+    <bean id="moviePlayer" class="com.evgeniy.spring.test.xml.movie.MoviePlayer">
         <property name="movies">
             <list>
                 <ref bean="fantasticMovieBean"/>
@@ -45,7 +45,22 @@
         <property name="volume" value="${moviePlayer.volume}"/>
 
         <!--        Присвоение значений полям класса MoviePlayer-->
-<!--        <property name="name" value="Some name"/>-->
-<!--        <property name="volume" value="50"/>-->
+        <!--        <property name="name" value="Some name"/>-->
+        <!--        <property name="volume" value="50"/>-->
+    </bean>
+
+    <!--    Scope-->
+    <bean id="person" class="com.evgeniy.spring.test.xml.scope.Person" scope="singleton"
+    init-method="doMyInit" destroy-method="doMyDestroy" factory-method="getPerson">
+    </bean>
+
+
+    <!--                      TMS-->
+    <!--    Shape-->
+    <bean id="circle" class="com.evgeniy.spring.tms.shape.Circle">
+    </bean>
+
+    <bean id="geometry" class="com.evgeniy.spring.tms.shape.Geometry">
+        <property name="shape" ref="circle"/>
     </bean>
 </beans>

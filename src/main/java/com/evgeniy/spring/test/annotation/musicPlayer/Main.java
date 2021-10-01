@@ -1,13 +1,14 @@
-package com.evgeniy.spring.test.hellospring;
+package com.evgeniy.spring.test.annotation.musicPlayer;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class TestSpring {
+public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml");
-        TestBean testBean = context.getBean("testBean", TestBean.class);
-        System.out.println(testBean.getName());
+                "annotationContext.xml"
+        );
+        PC pc = context.getBean(PC.class);
+        System.out.println(pc);
     }
 }

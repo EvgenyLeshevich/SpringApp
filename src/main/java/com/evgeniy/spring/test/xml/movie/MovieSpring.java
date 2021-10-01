@@ -1,4 +1,4 @@
-package com.evgeniy.spring.test.movie;
+package com.evgeniy.spring.test.xml.movie;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

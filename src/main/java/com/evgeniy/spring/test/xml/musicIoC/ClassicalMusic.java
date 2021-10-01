@@ -1,4 +1,4 @@
-package com.evgeniy.spring.test.musicIoC;
+package com.evgeniy.spring.test.xml.musicIoC;
 
 public class ClassicalMusic implements Music{
     @Override

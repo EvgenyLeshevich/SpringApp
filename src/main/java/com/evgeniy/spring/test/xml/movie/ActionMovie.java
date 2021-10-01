@@ -1,4 +1,4 @@
-package com.evgeniy.spring.test.movie;
+package com.evgeniy.spring.test.xml.movie;
 
 public class ActionMovie implements Movies{
     @Override
