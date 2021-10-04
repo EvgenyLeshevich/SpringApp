@@ -1,14 +1,11 @@
-package com.evgeniy.spring.test.annotation.workMusicPlayerWithEnam;
-
-import org.springframework.stereotype.Component;
+package com.evgeniy.spring.test.javaCode.FilmPlayerWithBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//@Component
-public class FantasticFilm implements Films{
+public class FantasticFilm implements Films {
     @Override
-    public List<String> getFilm() {
+    public List<String> getFilms() {
         List<String> fantasticFilms = new ArrayList<>();
         fantasticFilms.add("Avengers");
         fantasticFilms.add("Star Wars");

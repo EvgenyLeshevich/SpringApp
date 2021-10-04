@@ -9,4 +9,6 @@
 
     <context:component-scan base-package="com.evgeniy.spring.test.annotation"/>
 
+    <context:property-placeholder location="classpath:musicPlayerWithAnnotation.properties"/>
+
 </beans>

@@ -1,4 +1,4 @@
-package com.evgeniy.spring.test.annotation.workMusicPlayerWithEnam;
+package com.evgeniy.spring.test.annotation.workFilmPlayerWithEnam;
 
 import java.util.List;
 

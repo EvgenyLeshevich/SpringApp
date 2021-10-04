@@ -1,4 +1,4 @@
-package com.evgeniy.spring.tms.personWithAnnotation;
+package com.evgeniy.spring.tms.personWithAnnotationAndJavaCode;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

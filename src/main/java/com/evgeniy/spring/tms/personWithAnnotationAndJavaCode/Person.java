@@ -1,4 +1,4 @@
-package com.evgeniy.spring.tms.personWithAnnotation;
+package com.evgeniy.spring.tms.personWithAnnotationAndJavaCode;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
